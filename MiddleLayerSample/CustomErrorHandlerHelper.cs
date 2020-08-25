@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,10 @@ namespace ExceptionMiddlewareSample
          
         };
 
-        var stream = httpContext.Response.Body;
-        await JsonSerializer.SerializeAsync(stream, problem).ConfigureAwait(false);
+        var result = JsonConvert.SerializeObject(problem,new Formatting() { });
+        httpContext.Response.ContentType = "application/json";
+        httpContext.Response.ContentLength = result.Length;
+        await httpContext.Response.WriteAsync(result).ConfigureAwait(false);
       }
     }
   }

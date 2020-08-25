@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Middleware;
 
 namespace ExceptionMiddlewareSample
 {
@@ -39,7 +40,11 @@ namespace ExceptionMiddlewareSample
 
       if (env.IsDevelopment())
       {
-        app.UseExceptionHandler(err => err.UseException(env));
+        // Implementation -1
+        //app.UseExceptionHandler(err => err.UseException(env));
+
+        // Implementation -2
+        app.UseHttpStatusCodeExceptionMiddleware();
       }
 
       app.UseSwagger();
