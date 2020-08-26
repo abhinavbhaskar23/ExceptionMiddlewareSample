@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionMiddlewareSample", "MiddleLayerSample\ExceptionMiddlewareSample.csproj", "{70CC7D88-474C-452A-9635-E8E989908895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionMiddlewareSample", "MiddleLayerSample\ExceptionMiddlewareSample.csproj", "{70CC7D88-474C-452A-9635-E8E989908895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionMiddleware", "ExceptionMiddleware\ExceptionMiddleware.csproj", "{9D1828F8-6367-4274-8EAE-19BE38F7C55A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{70CC7D88-474C-452A-9635-E8E989908895}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70CC7D88-474C-452A-9635-E8E989908895}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70CC7D88-474C-452A-9635-E8E989908895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D1828F8-6367-4274-8EAE-19BE38F7C55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D1828F8-6367-4274-8EAE-19BE38F7C55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D1828F8-6367-4274-8EAE-19BE38F7C55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D1828F8-6367-4274-8EAE-19BE38F7C55A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
