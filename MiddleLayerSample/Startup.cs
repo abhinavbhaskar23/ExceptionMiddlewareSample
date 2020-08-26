@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ExceptionMiddleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Middleware;
 
 namespace ExceptionMiddlewareSample
 {
@@ -28,6 +22,7 @@ namespace ExceptionMiddlewareSample
 
       services.AddControllers();
       services.AddSwaggerGen();
+      services.AddSingleton<IExceptionHandler, MiddlewareExceptionHandler>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +39,7 @@ namespace ExceptionMiddlewareSample
         //app.UseExceptionHandler(err => err.UseException(env));
 
         // Implementation -2
-        app.UseHttpStatusCodeExceptionMiddleware();
+        app.UseCustomExceptionMiddlewareNew();
       }
 
       app.UseSwagger();
